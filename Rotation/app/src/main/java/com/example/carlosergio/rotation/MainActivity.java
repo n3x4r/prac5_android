@@ -1,10 +1,8 @@
 package com.example.carlosergio.rotation;
 
 import android.content.res.Resources;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.BoringLayout;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
@@ -12,7 +10,6 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         mInterestRateField = (EditText)findViewById(R.id.interest_rate_field);
         Resources resources = getResources();
         mTableSize = resources.getDimension(R.dimen.table_body_size);
-        if (savedInstanceState != null) {
+        /*if (savedInstanceState != null) {
             mRowData = (ArrayList<InfoPago>) savedInstanceState.getSerializable(DATA);
             for (int i = 0; i < mRowData.size(); i++) {
                 addRow(mRowData.get(i));
             }
-        }
+        }*/
     }
 
     // Attached to the Button via the android:onClick attribute

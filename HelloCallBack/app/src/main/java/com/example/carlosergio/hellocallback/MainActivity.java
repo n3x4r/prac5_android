@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         textv = (TextView) findViewById(R.id.textview);
         if (savedInstanceState!=null){
             String texto = savedInstanceState.getString(DATA);
-            textv.append(texto);
+            textv.setText(texto);
         }
     }
 
@@ -66,16 +66,19 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);
         textv.append("onSaveInstanceState()\n");
+        //textv.append("onStop()\n");
+        //textv.append("onDestroy()\n");
         savedInstanceState.putString(DATA, textv.getText().toString());
+        //textv.setText("");
         Log.i(TAG, "onSaveInstanceState()");
     }
-    @Override
+    /*@Override
     public void onRestoreInstanceState(Bundle savedInstanceState){
         super.onRestoreInstanceState(savedInstanceState);
         textv.append("onRestoreInstanceState()\n");
-        String texto = savedInstanceState.getString(DATA);
-        textv.append(texto);
+        //String texto = savedInstanceState.getString(DATA);
+        //textv.append(texto);
         Log.i(TAG, "onRestoreInstanceState()");
-    }
+    }*/
 
 }
